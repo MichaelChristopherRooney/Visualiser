@@ -32,4 +32,9 @@
     <None Include="src\frag.glsl" />
     <None Include="src\vert.glsl" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\globals.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

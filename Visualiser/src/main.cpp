@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <vector>
 
+#include "globals.hpp"
+
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 #define GLM_ENABLE_EXPERIMENTAL
@@ -12,6 +14,7 @@ using namespace glm;
 
 GLint init_shaders();
 bool loadOBJ(const char * path, std::vector<glm::vec3> & out_vertices, std::vector<glm::vec3> & out_normals);
+int init_parser(char *fp);
 
 static GLFWwindow* window;
 std::vector<glm::vec3> verts;
@@ -48,6 +51,9 @@ static int init_gl() {
 // Sets up the window and shaders needed.
 // Also reads initial state from the binary file
 static int init() {
+	if (init_parser("data.bin") == -1) {
+		return -1;
+	}
 	if (init_gl() == -1) {
 		return -1;
 	}
