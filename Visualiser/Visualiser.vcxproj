@@ -121,6 +121,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\parser.cpp" />
     <ClCompile Include="src\shader.cpp" />
+    <ClCompile Include="src\sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\frag.glsl" />
@@ -128,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\globals.hpp" />
+    <ClInclude Include="src\sphere.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
