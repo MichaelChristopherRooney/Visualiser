@@ -70,7 +70,7 @@ static int init() {
 		glfwTerminate();
 		return -1;
 	}
-	cam = glm::lookAt(glm::vec3(0.0f, 0.0f, 50.0f), glm::vec3(25.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	cam = glm::lookAt(glm::vec3(25.0f, 25.0f, 75.0f), glm::vec3(25.0f, 25.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	proj = glm::perspective(glm::radians(90.0f), 16.0f / 9.0f, 0.1f, 100.0f);
 	return 0;
 }
@@ -130,6 +130,10 @@ int main(void) {
 				int fin = get_next_iteration_sphere_state();
 				if (fin == 1) {
 					last_iter = true;
+				} else if (simulation_time_of_next_event - simulation_time_of_last_event <= tick_rate) {
+					printf("TODO: unhandled case\n");
+					getchar();
+					exit(1);
 				}
 			}
 		}
